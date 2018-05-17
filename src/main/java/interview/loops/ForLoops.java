@@ -24,13 +24,12 @@ public class ForLoops {
             System.out.print(strings[i] + " ");
         }
 
-        System.out.print( "\n");
+        System.out.print("\n");
 
         // The same but using the enhanced For loop
-        for (String x: strings) {
+        for (String x : strings) {
             System.out.print(x + " ");
         }
-
 
     }
 }

@@ -6,7 +6,7 @@ public class SwitchStatements {
         int x = 500;
 
         // Until Java 7 only integers can be used on switch statements. From Java 8 Strings are allowed as well.
-        switch(x) {
+        switch (x) {
             case 100:
                 System.out.println("Received 100");
                 break;
@@ -20,12 +20,23 @@ public class SwitchStatements {
         char ch = 'x';
 
         // Chars are also integers so they can be used inside a switch.
-        switch(ch) {
+        switch (ch) {
             case 'x':
                 System.out.println("Received x");
                 break;
             case 'k':
                 System.out.println("Received k");
+                break;
+            default:
+                System.out.println("Default");
+        }
+
+        // Java 8 support for String
+        String str = "Football";
+
+        switch(str) {
+            case "Football":
+                System.out.println("Football");
                 break;
             default:
                 System.out.println("Default");

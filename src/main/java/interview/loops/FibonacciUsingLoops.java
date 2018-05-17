@@ -20,7 +20,7 @@ public class FibonacciUsingLoops {
         System.out.println(fibs[2]);
 
         for (int i = 3; i < fibs.length; i++) {
-            fibs[i] = fibs[i-1] + fibs[i-2];
+            fibs[i] = fibs[i - 1] + fibs[i - 2];
             System.out.println(fibs[i]);
         }
     }
