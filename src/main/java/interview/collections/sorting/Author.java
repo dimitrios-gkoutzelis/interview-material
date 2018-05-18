@@ -8,7 +8,7 @@ public class Author implements Comparable<Author> {
     String name;
     int id;
 
-    Author(String name, int id) {
+    public Author(String name, int id) {
         this.name = name;
         this.id = id;
     }

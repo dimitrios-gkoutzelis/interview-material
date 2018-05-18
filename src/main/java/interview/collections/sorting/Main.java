@@ -1,3 +1,9 @@
+import main.java.interview.collections.sorting.Author;
+import main.java.interview.collections.sorting.AuthorComparator;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Main {
     public static void main(String[] args) {
         ArrayList<Author> authors = new ArrayList<Author>();
