@@ -1,8 +1,8 @@
-package main.java.interview.basics.Collections;
+package main.java.interview.collections;
 
 import java.util.*;
 
-public class Main {
+public class HashMapExample {
 
     public static void main(String[] args) {
 
