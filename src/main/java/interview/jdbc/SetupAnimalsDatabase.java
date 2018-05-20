@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AnimalsDatabase {
+public class SetupAnimalsDatabase {
     //Important: include in project libraries derby.jar  ../jdk/db/lib/derby.jar
     public static void main(String[] args) throws Exception {
         String url = "jdbc:derby:zoo;create=true";
