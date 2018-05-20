@@ -1,0 +1,51 @@
+package main.java.interview.jdbc;
+
+import java.sql.*;
+import java.time.LocalTime;
+import java.util.HashMap;
+import java.util.Map;
+
+public class BatchPreparedStatementExample {
+    //run first SetupAnimalsDatabase
+    public static void main(String[] args) throws Exception {
+        String url = "jdbc:derby:zoo;create=true";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = DriverManager.getConnection(url);
+            // Create SQL statement
+            String SQL = "INSERT INTO animal VALUES(?, ?, ?, ?)";
+            pstmt = conn.prepareStatement(SQL);
+
+            conn.setAutoCommit(false);
+
+            // Set the variables
+            pstmt.setInt(1, 7);
+            pstmt.setInt(2, 2);
+            pstmt.setString(3, "John");
+            pstmt.setString(4, "2005-11-12 03:44:00");
+            // Add it to the batch
+            pstmt.addBatch();
+
+            pstmt.setInt(1, 8);
+            pstmt.setInt(2, 2);
+            pstmt.setString(3, "Maria");
+            pstmt.setString(4, "2005-11-12 03:44:00");
+            pstmt.addBatch();
+            pstmt.executeBatch();
+
+            conn.commit();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getSQLState());
+            System.out.println(ex.getErrorCode());
+        } finally {
+            assert conn != null;
+            conn.rollback();
+            assert pstmt != null;
+            pstmt.close();
+            conn.close();
+        }
+    }
+}
