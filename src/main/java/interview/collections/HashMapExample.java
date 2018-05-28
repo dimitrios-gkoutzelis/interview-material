@@ -6,7 +6,7 @@ public class HashMapExample {
 
     public static void main(String[] args) {
 
-        HashMap<String, String> map = new HashMap<>();
+        HashMap<String, String> map = new HashMap<>(100, 0.75f);
         map.put("Mary", "NewYork");
         map.put("Tomas", "London");
         map.put("Jan", "Rome");
